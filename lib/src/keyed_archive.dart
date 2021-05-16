@@ -240,6 +240,14 @@ class KeyedArchive extends Object
       return DateTime.parse(v) as T;
     }
 
+    if (v is List<String?>) {
+      final v2 = <String>[];
+      for (final item in v) {
+        v2.add(item!);
+      }
+      v = v2;
+    }
+
     return v;
   }
 
